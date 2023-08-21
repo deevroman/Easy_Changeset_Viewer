@@ -1,6 +1,6 @@
 /*	Main Process */
 "use strict";
-const OSMAPI = "https://api.openstreetmap.org/api/0.6/changesets";
+const OSMAPI = "https://master.apis.dev.openstreetmap.org/api/0.6/changesets";
 const TEMPLATES = [
 	"#46c8e4", "#37a2ca", "#297db0", "#1d5b93", "#123a74", "#081d51",
 	"#b3b2f6", "#8e8cf1", "#6865ed", "#4240da", "#2624a5", "#100f6b",
