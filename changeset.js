@@ -216,9 +216,9 @@ class EasyChangeset {
 		let tagdom = parser.parseFromString(element.innerHTML, "text/html");
 		let tagcom = tagdom.querySelector("tag[k='comment']");
 		let comment = tagcom !== null ? tagcom.getAttribute("v") : "";
-		let contents = `User Name: <a href="https://osm.org/user/${username}">${username}</a> / <button onclick="easycs.toggleMapper(${rank})">check clear</button><br>`;
+		let contents = `User Name: <a href="https://master.apis.dev.openstreetmap.org/user/${username}">${username}</a> / <button onclick="easycs.toggleMapper(${rank})">check clear</button><br>`;
 		contents += basic.formatDate(dttime, "DateTime: YYYY/MM/DD hh:mm:ss<br>");
-		contents += `ChangeSet: <a href="https://osm.org/changeset/${chgsetid}" target="_blank">${chgsetid}</a><br>`;
+		contents += `ChangeSet: <a href="https://master.apis.dev.openstreetmap.org/changeset/${chgsetid}" target="_blank">${chgsetid}</a><br>`;
 		contents += "Changes Count: " + counts + "<br>";
 		contents += "Comment: " + comment;
 		let color = this.colors[rank % this.colors.length];
@@ -290,10 +290,10 @@ class EasyChangeset {
 	// コメント欄作成(既存コメントに追記)
 	makeComments(username) {
 		let commentlist = document.getElementById("comments");
-		let contents = `<div><span><a href="https://osm.org/user/${username}" target="_blank">${username}</a></span><br>`;
+		let contents = `<div><span><a href="https://master.apis.dev.openstreetmap.org/user/${username}" target="_blank">${username}</a></span><br>`;
 		let mapper = this.mappers.find(u => u.name === username);
 		mapper.comments.forEach(comment => {
-			contents += `<a href="https://www.openstreetmap.org/changeset/${comment[0]}" target="_blank">${comment[1]}</a> : ${comment[2]}<br>`;
+			contents += `<a href="https://master.apis.dev.openstreetmap.org/changeset/${comment[0]}" target="_blank">${comment[1]}</a> : ${comment[2]}<br>`;
 		});
 		commentlist.insertAdjacentHTML('beforeend', contents + "</div>");
 	}
